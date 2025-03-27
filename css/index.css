@@ -1,0 +1,67 @@
+/* books.css */
+/* 1. 基本设计(背景、字体、颜色) */
+/* 2. 表现设计(定义域和列表框样式) */
+form {
+    width: 400px;
+    margin: 5px auto;
+    height: 180px;
+    border: 1px double #0066FF;
+    padding: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    width: 90px;
+    height: 48px;
+}
+
+a:link, ul li a:hover {
+    text-decoration: none;
+    border-bottom: 3px solid red;
+}
+
+a:active, a:visited {
+    text-decoration: none;
+}
+
+.myButton {
+    margin: 20px auto;
+    width: 100px;
+    height: 30px;
+    background: #DADADA;
+}
+
+/* 初始时所有section均不可见 */
+section {
+    display: none;
+}
+
+/* 当body和section具有相同的class属性时，section则显示 */
+body.list section.list,
+body.add section.add,
+body.setting section.setting {
+    display: block;
+}
+
+footer {
+    padding: 0px;
+    margin: 0 auto;
+    text-align: center;
+    background: #DADADA;
+    height: 40px;
+}
+
+p {
+    padding-top: 10px;
+    font-size: 16px;
+}
+
+#booklist {
+    width: 100%;
+}

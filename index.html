@@ -1,18 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>AlloyTeam|腾讯全端 AlloyTeam 团队</title>
-  <meta name="keywords" content="AlloyTeam 前端 腾讯 腾讯前端">
-  <meta name="description" content="腾讯全端AlloyTeam团队">
-  <link rel="shortcut icon" href="./favicon.ico">
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <link rel="stylesheet" href="./css/index.css">
+    <meta charset="UTF-8">
+    <title>IndexedDB 管理客户端数据 - 简易图书管理系统</title>
+    <link rel="stylesheet" type="text/css" href="css\index.css"/>
+    <script type="text/javascript" src="index.js"></script>
 </head>
-<body>
-    <p>1111</p>
+<body class="list ">
+    <!-- 1. 采用HTML5设计页面内容 -->
+    <header>
+        <h2>简易客户端图书管理系统</h2>
+        <nav>
+            <ul>
+                <li><a id="al" href="#list" class="list">图书汇总</a></li>
+                <li><a id="a2" href="#add" class="add">添加图书</a></li>
+                <li><a id="a3" href="#setting" class="setting">系统设置</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 采用3个section设计3个不同的导航页面 -->
+
+    <section class="list">
+        <!-- 第 1 个section 是图书列表清单 -->
+        <form name="list">
+            <input type="search" size="30" name="query" placeholder="请输入需要查询的图书名称"/>
+            <input type="button" value="检索图书" onclick="showBooks();"/>
+            <br/>
+            <textarea id="booklist" rows="8" placeholder="显示查询结果"></textarea> <!-- 显示查询结果 -->
+        </form>
+    </section>
+
+    <section class="add">
+        <!-- 第 2 个section 是图书添加 -->
+        <form name="add">
+            <fieldset>
+                <legend class="legend-center">图书基本信息</legend>
+                图书标题：<input type="text" name="title" autocomplete="true"/>
+                <br/>
+                作者：<input type="text" name="author" autocomplete="true" required/><br/>
+                ISBN：<input type="text" name="isbn" autocomplete="true" pattern="[0-9]{13}" required/><br/>
+                <input type="button" class="myButton" value="添加图书" onclick="addBook();">
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="setting">
+        <!-- 第 3 个section 是系统设置 -->
+        <form name="setting">
+            <input type="button" value="清除所有图书" class="myButton" onclick="deleteAllBooks();"/>
+            <input type="button" value="清除数据库" class="myButton" onclick="deleteDatabase();"/>
+            <input type="button" value="数据库初始化" class="myButton" onclick="loadBooks()"/>
+        </form>
+    </section>
+
+    <footer>
+        <p>版权所有 &copy; 大数据4班刘子豪</p>
+    </footer>
 </body>
 </html>
-
